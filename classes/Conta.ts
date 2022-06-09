@@ -25,5 +25,6 @@ export abstract class Conta {
     }
 
     abstract depositar(value: Number): void;
+    
     abstract sacar(value: Number): void;
 }

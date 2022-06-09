@@ -1,9 +1,13 @@
 export abstract class Pessoa {
-    private _cpf: String;
-    private _nome: String;
-    private _telefone: String;
-
-    // getters and setters
+    constructor(
+        protected _cpf: String,
+        protected _nome: String,
+        protected _telefone: String,
+    ) {
+        this._cpf = _cpf;
+        this._nome = _nome;
+        this._telefone = _telefone;
+    }
     public get cpf(): String {
         return this._cpf;
     }

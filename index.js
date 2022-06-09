@@ -1,2 +1,12 @@
-var aa = 'fairy';
-console.log(typeof (aa));
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Cargo_js_1 = require("./classes/Cargo.js");
+var Funcionario_js_1 = require("./classes/Funcionario.js");
+var funcionario = new Funcionario_js_1.Funcionario("111", "Joaozinho", "12345678", 1200.00, new Cargo_js_1.Cargo('Gerente'));
+console.log(funcionario);
+funcionario.cpf = '222';
+funcionario.nome = 'Mariazinha';
+funcionario.cpf = '987654321';
+funcionario.cargo.nome = 'Diretor';
+console.log('--------');
+console.log(funcionario);

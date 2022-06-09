@@ -1,5 +1,9 @@
 export class Cargo {
     private _nome: String;
+
+    constructor(nome: String) {
+        this._nome = nome;
+    }
     
     public get nome(): String {
         return this._nome;
