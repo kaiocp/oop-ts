@@ -19,8 +19,11 @@ exports.Cliente = void 0;
 var Pessoa_js_1 = require("./Pessoa.js");
 var Cliente = /** @class */ (function (_super) {
     __extends(Cliente, _super);
-    function Cliente() {
-        return _super !== null && _super.apply(this, arguments) || this;
+    function Cliente(_cpf, _nome, _telefone, _vip, _enderecos) {
+        var _this = _super.call(this, _cpf, _nome, _telefone) || this;
+        _this._vip = _vip;
+        _this._enderecos = _enderecos;
+        return _this;
     }
     Object.defineProperty(Cliente.prototype, "vip", {
         get: function () {
@@ -36,18 +39,8 @@ var Cliente = /** @class */ (function (_super) {
         get: function () {
             return this._enderecos;
         },
-        enumerable: false,
-        configurable: true
-    });
-    Cliente.prototype.adicionaEndereco = function (value) {
-        this._enderecos.push(value);
-    };
-    Object.defineProperty(Cliente.prototype, "conta", {
-        get: function () {
-            return this._conta;
-        },
         set: function (value) {
-            this._conta = value;
+            this._enderecos = value;
         },
         enumerable: false,
         configurable: true

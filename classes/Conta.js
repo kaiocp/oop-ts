@@ -2,7 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Conta = void 0;
 var Conta = /** @class */ (function () {
-    function Conta() {
+    function Conta(_numero, _saldo) {
+        this._numero = _numero;
+        this._saldo = _saldo;
     }
     Object.defineProperty(Conta.prototype, "numero", {
         get: function () {

@@ -1,9 +1,12 @@
 import { Cliente } from "./Cliente.js";
 
 export abstract class Conta {
-    private _numero: String;
-    private _saldo: Number;
-    private _cliente: Cliente;
+    private _cliente: Cliente
+    constructor(
+        private _numero: String,
+        private _saldo: Number,
+    ) {}
+
 
     public get numero(): String {
         return this._numero;

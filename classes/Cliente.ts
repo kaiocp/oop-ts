@@ -3,9 +3,17 @@ import { Pessoa } from "./Pessoa.js";
 import { Conta } from "./Conta.js";
 
 export class Cliente extends Pessoa {
-    private _vip: Boolean;
-    private _enderecos: Array<Endereco>;
     private _conta: Conta;
+
+    constructor(
+        _cpf: String,
+        _nome: String,
+        _telefone: String,
+        private _vip: Boolean,
+        private _enderecos: Array<Endereco>,
+        
+    ) { super(_cpf, _nome, _telefone) }
+
     
     public get vip(): Boolean {
         return this._vip;
@@ -16,13 +24,9 @@ export class Cliente extends Pessoa {
     public get enderecos(): Array<Endereco> {
         return this._enderecos;
     }
-    public adicionaEndereco(value: Endereco) {
-        this._enderecos.push(value);
+    public set enderecos(value: Array<Endereco>) {
+        this._enderecos = value;
     }
-    public get conta(): Conta {
-        return this._conta;
-    }
-    public set conta(value: Conta) {
-        this._conta = value;
-    }
+
+
 }

@@ -1,10 +1,12 @@
 export class Endereco {
-    private _cep: String;
-    private _logradouro: String;
-    private _numero: String;
-    private _complemento: String;
-    private _cidade: String;
-    private _uf: String;
+    constructor(
+    private _cep: String,
+    private _logradouro: String,
+    private _numero: String,
+    private _complemento: String,
+    private _cidade: String,
+    private _uf: String
+    ) {}
 
     public get cep(): String {
         return this._cep;
