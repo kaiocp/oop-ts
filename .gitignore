@@ -1,5 +1,15 @@
+.DS_Store
 node_modules
 package-lock.json
 package.json
 index.js
+Cargo.js
+Cliente.js
+Conta.js
+ContaCorrente.js
+ContaPoupanca.js
+Endereco.js
+Funcionario.js
+Pessoa.js
+SaldoAniversario.js
 duvidas.txt

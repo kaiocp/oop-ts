@@ -6,7 +6,7 @@ export class SaldoAniversario {
 
     public retornaRendimento(): number {
         const qtdMeses = this.getMonthDifference(this.data, new Date());
-        const rendimento = this.valor + (this.valor * (0.05 * qtdMeses));
+        const rendimento = this.valor + (this.valor * (0.0063 * qtdMeses));
         return rendimento;
     }
 
