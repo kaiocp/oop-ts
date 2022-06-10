@@ -4,6 +4,7 @@ import { Cliente } from "./classes/Cliente.js";
 import { Conta } from "./classes/Conta.js";
 import { ContaCorrente } from "./classes/ContaCorrente.js";
 import { Endereco } from "./classes/Endereco.js";
+import { SaldoAniversario } from "./classes/SaldoAniversario.js";
 
 // import { Cargo } from "./classes/Cargo.js";
 // import { Funcionario } from "./classes/Funcionario.js";
@@ -51,8 +52,3 @@ import { Endereco } from "./classes/Endereco.js";
 // cliente.sacar(30001);
 
 // TESTANDO CLASSE CONTA POUPANCA
-
-
-
-
-
