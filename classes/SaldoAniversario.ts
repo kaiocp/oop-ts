@@ -1,4 +1,11 @@
 export class SaldoAniversario {
-    public dia: Number;
-    public saldo: Number;
+    constructor(
+        public valor: number,
+        public data: Date    
+    ) {}
+
+    public retornaRendimento(): number {
+        
+        
+    }
 }

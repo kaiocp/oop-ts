@@ -2,6 +2,7 @@
 
 import { Cliente } from "./classes/Cliente.js";
 import { Conta } from "./classes/Conta.js";
+import { ContaCorrente } from "./classes/ContaCorrente.js";
 import { Endereco } from "./classes/Endereco.js";
 
 // import { Cargo } from "./classes/Cargo.js";
@@ -29,4 +30,29 @@ import { Endereco } from "./classes/Endereco.js";
 // ;
 
 // console.log(cliente);
+
+// TESTANDO CLASSE CONTACORRENTE
+
+// let cliente = new ContaCorrente(
+//     '123-4',
+//     1000, 
+//         new Cliente('12345678', 
+//         'Paula', 
+//         '1234-5678',
+//         true, 
+//         [new Endereco('123456', 'Rua A', '13', 'ap 123', 'Salvador', 'BA')]
+//             )
+//     );
+
+// console.log(cliente);
+// console.log('-------------');
+// console.log(cliente.limite);
+// console.log(cliente.saldo);
+// cliente.sacar(30001);
+
+// TESTANDO CLASSE CONTA POUPANCA
+
+
+
+
 

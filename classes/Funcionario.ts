@@ -7,14 +7,14 @@ export class Funcionario extends Pessoa {
         _cpf: String,
         _nome: String,
         _telefone: String,
-        private _salario: Number,
+        private _salario: number,
         public cargo: Cargo
     ) { super (_cpf, _nome, _telefone) }
 
-    public get salario(): Number {
+    public get salario(): number {
         return this._salario;
     }
-    public set salario(value: Number) {
+    public set salario(value: number) {
         this._salario = value;
     }
 }

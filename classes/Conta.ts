@@ -1,10 +1,10 @@
 import { Cliente } from "./Cliente.js";
 
 export abstract class Conta {
-    private _cliente: Cliente
     constructor(
-        private _numero: String,
-        private _saldo: Number,
+        protected _numero: String,
+        protected _saldo: number,
+        protected _cliente: Cliente
     ) {}
 
 
@@ -14,10 +14,10 @@ export abstract class Conta {
     public set numero(value: String) {
         this._numero = value;
     }
-    public get saldo(): Number {
+    public get saldo(): number {
         return this._saldo;
     }
-    public set saldo(value: Number) {
+    public set saldo(value: number) {
         this._saldo = value;
     }
     public get cliente(): Cliente {
@@ -27,7 +27,7 @@ export abstract class Conta {
         this._cliente = value;
     }
 
-    abstract depositar(value: Number): void;
+    protected abstract depositar(value: number, data: Date): void;
     
-    abstract sacar(value: Number): void;
+    protected abstract sacar(value: number): void;
 }

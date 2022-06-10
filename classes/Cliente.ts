@@ -3,18 +3,23 @@ import { Pessoa } from "./Pessoa.js";
 import { Conta } from "./Conta.js";
 
 export class Cliente extends Pessoa {
-    private _conta: Conta;
-
+    protected _conta: Conta;
+    
     constructor(
         _cpf: String,
         _nome: String,
         _telefone: String,
-        private _vip: Boolean,
-        private _enderecos: Array<Endereco>,
+        protected _vip: Boolean,
+        protected _enderecos: Array<Endereco>,
         
     ) { super(_cpf, _nome, _telefone) }
 
-    
+    public get conta(): Conta {
+        return this._conta;
+    }
+    public set conta(value: Conta) {
+        this._conta = value;
+    }
     public get vip(): Boolean {
         return this._vip;
     }
