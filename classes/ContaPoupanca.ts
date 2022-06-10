@@ -4,6 +4,7 @@ import { ContaCorrente } from "./ContaCorrente.js";
 import { SaldoAniversario } from "./SaldoAniversario.js";
 
 export class ContaPoupanca extends Conta {
+    private depositos: Array<SaldoAniversario>;
     constructor(
         _numero: String, 
         _saldo: number, 
@@ -20,10 +21,12 @@ export class ContaPoupanca extends Conta {
 
     public depositar(value: number, data: Date): void {
         let deposito = new SaldoAniversario(value, data);
-        // falta implementar algumas coisas ainda
+        this.depositos.push(deposito);
     }
 
     public sacar(value: number): void {
+        this.atualizaSaldoConformeRendimentos();
+        
         if ((this._saldo >= 0) && (value <= this._saldo)) {
             this._saldo = value;
         } else {
@@ -31,10 +34,18 @@ export class ContaPoupanca extends Conta {
         }
     }
     public resgatar(contaDestino: ContaCorrente, value: number): void {
+        this.atualizaSaldoConformeRendimentos();
+
         if ((this._saldo >= 0) && (value <= this._saldo)) {
             contaDestino.saldo = value;
         } else {
             console.log('Saldo insuficiente para realizar essa operação.')
         }
+    }
+    public atualizaSaldoConformeRendimentos(): void {
+        this.saldo = 0;
+        this.depositos.forEach((valor) => {
+            this.saldo += valor.retornaRendimento()
+        })
     }
 }
