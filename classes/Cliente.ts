@@ -2,9 +2,9 @@ import { Endereco } from "./Endereco.js";
 import { Pessoa } from "./Pessoa.js";
 import { Conta } from "./Conta.js";
 
-export class Cliente extends Pessoa {
+export class Cliente extends Pessoa {    
     protected _conta: Conta;
-    
+
     constructor(
         _cpf: String,
         _nome: String,

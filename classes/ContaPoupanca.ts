@@ -4,7 +4,8 @@ import { ContaCorrente } from "./ContaCorrente.js";
 import { SaldoAniversario } from "./SaldoAniversario.js";
 
 export class ContaPoupanca extends Conta {
-    private depositos: Array<SaldoAniversario>;
+    private depositos: Array<SaldoAniversario> = [];
+
     constructor(
         _numero: String, 
         _saldo: number, 
@@ -19,33 +20,33 @@ export class ContaPoupanca extends Conta {
         this._variacao = value;
     }
 
-    public depositar(value: number, data: Date): void {
-        let deposito = new SaldoAniversario(value, data);
+    public depositar(value: number, dataDeposito: Date): void {
+        let deposito: SaldoAniversario = new SaldoAniversario(value, dataDeposito);
         this.depositos.push(deposito);
     }
 
-    public sacar(value: number): void {
-        this.atualizaSaldoConformeRendimentos();
-        
-        if ((this._saldo >= 0) && (value <= this._saldo)) {
-            this._saldo = value;
+    public sacar(value: number, dataResgate: Date): void {
+        this.atualizaSaldoConformeRendimentos(dataResgate);        
+        if (value <= this._saldo) {
+            this._saldo -= value;
         } else {
             console.log('Saldo insuficiente para realizar essa operação.')
         }
     }
-    public resgatar(contaDestino: ContaCorrente, value: number): void {
-        this.atualizaSaldoConformeRendimentos();
+    public resgatar(contaDestino: ContaCorrente, value: number, dataResgate: Date): void {
+        this.atualizaSaldoConformeRendimentos(dataResgate);
 
-        if ((this._saldo >= 0) && (value <= this._saldo)) {
+        if (value <= this._saldo) {
             contaDestino.saldo = value;
+            this._saldo -= value;
         } else {
             console.log('Saldo insuficiente para realizar essa operação.')
         }
     }
-    public atualizaSaldoConformeRendimentos(): void {
+    public atualizaSaldoConformeRendimentos(dataResgate: Date): void {
         this.saldo = 0;
         this.depositos.forEach((valor) => {
-            this.saldo += valor.retornaRendimento()
+            this.saldo += valor.retornaRendimento(dataResgate)
         })
     }
 }

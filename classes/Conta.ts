@@ -15,7 +15,7 @@ export abstract class Conta {
         this._numero = value;
     }
     public get saldo(): number {
-        return this._saldo;
+        return parseFloat(this._saldo.toFixed(2));
     }
     public set saldo(value: number) {
         this._saldo = value;
@@ -27,7 +27,7 @@ export abstract class Conta {
         this._cliente = value;
     }
 
-    protected abstract depositar(value: number, data: Date): void;
+    protected abstract depositar(value: number, dataDeposito: Date, dataResgate: Date): void;
     
-    protected abstract sacar(value: number): void;
+    protected abstract sacar(value: number, dataResgate: Date): void;
 }
