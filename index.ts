@@ -1,5 +1,4 @@
 import { Cliente } from "./classes/Cliente.js";
-import { Conta } from "./classes/Conta.js";
 import { ContaCorrente } from "./classes/ContaCorrente.js";
 import { Endereco } from "./classes/Endereco.js";
 import { ContaPoupanca } from "./classes/ContaPoupanca.js";
@@ -23,11 +22,6 @@ let atendente = new Funcionario(
     2600,
     new Cargo('Atendente')
 );
-
-console.log(gerente);
-console.log('-------------------------------------------');
-console.log(atendente);
-console.log('-------------------------------------------');
 
 // b. Crie uma conta corrente e uma conta poupança para 2 clientes (um vip e um não vip)
 // do banco, um deles com um endereço apenas e outro com dois endereços
@@ -112,7 +106,7 @@ contaCorrenteJoao.transferirParaPoupanca(contaPoupancaJoao, (0.05*1212), new Dat
 // iii. Faça um saque de 50% de um salário mínimo da conta corrente do cliente
 // não vip e exiba o saldo em conta após a ação.
 contaCorrenteJoao.sacar(0.5*1212)
-console.log(contaCorrenteJoao.saldo);
+console.log(`Saldo na conta corrente: R$${contaCorrenteJoao.saldo}`);
 // iv. Tente fazer outro saque de 50% de um salário mínimo da conta corrente do
 // cliente não vip.
 contaCorrenteJoao.sacar(0.5*1212)
@@ -120,8 +114,8 @@ contaCorrenteJoao.sacar(0.5*1212)
 // 09/06/2022.
 // vi. Faça um resgate de 60 reais da conta poupança no dia 09/07/2022.
 contaPoupancaJoao.resgatar(contaCorrenteJoao, 60, new Date(2022,7,9));
-console.log(contaCorrenteJoao.saldo);
-console.log(contaPoupancaJoao.saldo);
+console.log(`Saldo na conta corrente: R$${contaCorrenteJoao.saldo}`);
+console.log(`Saldo na conta poupança: R$${contaPoupancaJoao.saldo}`);
 
 console.log('-------------------------------------------');
 // f. Cliente VIP:
@@ -133,10 +127,31 @@ contaCorrentePaula.transferirParaPoupanca(contaPoupancaPaula, 20*1212, new Date(
 // iii. Faça um saque de 50000 reais da conta corrente do cliente vip e exiba o
 // saldo em conta após a ação.
 contaCorrentePaula.sacar(50000);
-console.log(contaCorrentePaula.saldo);
+console.log(`Saldo: na conta corrente R$${contaCorrentePaula.saldo}`);
 // iv. Tente fazer outro saque de 50000 reais da conta corrente do cliente vip.
 contaCorrentePaula.sacar(50000);
-console.log(contaCorrentePaula.saldo);
+console.log(`Saldo na conta poupança: R$${contaCorrentePaula.saldo}`);
+
+console.log('-------------------------------------------');
+console.log('-------------------------------------------');
+
+// g. Relatório dos Clientes do Banco:
+// i. Liste todos os clientes do banco, seus respectivos endereços e saldos em
+// conta de todas suas contas.
+// ii. Liste todos os funcionários do banco, seus respectivos salários e cargos.
+
+console.log('RELATÓRIO\n',
+            'Clientes:\n',
+            'Paula\n',
+            cliente1Paula, contaCorrentePaula, contaPoupancaPaula, '\n',
+            'João\n\n',
+            cliente2Joao, contaCorrenteJoao, contaPoupancaJoao, '\n',
+            'Funcionários\n',
+            gerente, '\n',
+            atendente);
+            
+
+
 
 
 
