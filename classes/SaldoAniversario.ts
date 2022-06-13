@@ -1,8 +1,22 @@
 export class SaldoAniversario {
+
     constructor(
-        public valor: number,
-        public dataDeposito: Date
+        private _valor: number,
+        private _dataDeposito: Date
     ) {}
+
+    public get valor(): number {
+      return this._valor;
+    }
+    public set valor(value: number) {
+      this._valor = value;
+    }
+    public get dataDeposito(): Date {
+      return this._dataDeposito;
+    }
+    public set dataDeposito(value: Date) {
+      this._dataDeposito = value;
+    }
 
     public retornaRendimento(dataResgate: Date): number {
         const qtdMeses = this.getMonthDifference(dataResgate);

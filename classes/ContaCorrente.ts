@@ -33,7 +33,7 @@ export class ContaCorrente extends Conta {
             console.log('Saldo insuficiente para realizar essa operação.')
         } else {
             this._saldo -= value;
-            conta.saldo = value;
+            conta.saldo += value;
         }
     }
     public transferirParaPoupanca(contaPoupanca: ContaPoupanca, value: number, dataDeposito: Date): void {

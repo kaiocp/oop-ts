@@ -12,3 +12,4 @@ export class Cargo {
         this._nome = value;
     }
 }
+
